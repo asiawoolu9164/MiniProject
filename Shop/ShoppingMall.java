@@ -3,20 +3,26 @@ package Shop;
 import java.util.ArrayList;
 
 public class ShoppingMall {
-    private ArrayList<Shop> shops;
+    private String name;
+    private String location;
+    private ArrayList<Cars> carsInMall;
 
-    public ShoppingMall() {
-        shops = new ArrayList<Shop>();
+    public ShoppingMall(String name, String location) {
+        this.name = name;
+        this.location = location;
+        this.carsInMall = new ArrayList<>();
     }
 
-    public void addShop(Shop shop) {
-        shops.add(shop);
+    public void addCarToMall(Cars carShop) {
+        carsInMall.add(carShop);
     }
 
-    public void displayShops() {
-        for (Shop shop : shops) {
-            shop.displayShopInfo();
-            System.out.println("--------------");
+    public void displayCarsInMall() {
+        System.out.println("Shopping Mall: " + name);
+        System.out.println("Location: " + location);
+        System.out.println("Cars in Mall:");
+        for (Cars car : carsInMall) {
+            System.out.println(car);
         }
     }
 }

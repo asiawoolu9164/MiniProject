@@ -2,7 +2,6 @@ package Shop;
 
 import java.util.ArrayList;
 
-// Abstract class Shop
 abstract class Shop {
     private String Shopname;
     private ArrayList<Product> products;
