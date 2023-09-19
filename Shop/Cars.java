@@ -1,49 +1,39 @@
 package Shop;
 
 public class Cars extends Product {
-    private AnimalSize size;
+    private CarBrand brand;
 
     public Cars(String name) {
-    super(name, 0);
-    this.size = AnimalSize.MEDIUM;
-    
-  }
-
-    public Cars(String name, double price) {
-    super(name, price);
-    this.size = AnimalSize.MEDIUM;
-  }
-
-  public Cars(String name, double price, AnimalSize size) {
-    super(name, price);
-    this.size = size;
-  }
-
-  public String GetSize() {
-    switch (size) {
-      case SMALL:
-        return "Small";
-      case MEDIUM:
-        return "Medium";
-      case LARGE:
-        return "Large";
-      case GIANT:
-        return "Giant";
+        super(name, 0);
+        this.brand = CarBrand.DEFAULT;
     }
 
-    return "???";
-  }
+    public Cars(String name, double price) {
+        super(name, price);
+        this.brand = CarBrand.DEFAULT;
+    }
 
-  @Override
-  public String GetInfo() {
-    return  String.format("Dog's name: %s, Price: $%.2f, Quantity: %d", GetName(), GetPrice());
-  }
+    public Cars(String name, double price, CarBrand brand) {
+        super(name, price);
+        this.brand = brand;
+    }
 
-  public enum AnimalSize {
-    SMALL,
-    MEDIUM,
-    LARGE,
-    GIANT
-  }
-  
+    public String GetBrand() {
+        return brand.toString();
+    }
+    @Override
+    public String GetInfo() {
+        return String.format("Car's name: %s, Price: $%.2f, Brand: %s", GetName(), GetPrice(), GetBrand());
+    }
+
+    public enum CarBrand {
+        DEFAULT,
+        LAMBORGHINI,
+        BMW,
+        FERRARI,
+        ROLLSROYCE,
+        MASERATI,
+        TESLA,
+        PORSCHE,
+    }
 }

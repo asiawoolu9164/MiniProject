@@ -1,7 +1,7 @@
 package Shop;
 
 public class Car_Parts extends Product{
-    private String PartType;//
+    private String PartType;
 
 
     public Car_Parts(String name){

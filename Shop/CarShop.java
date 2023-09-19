@@ -2,22 +2,22 @@ package Shop;
 
 // Concrete subclass CarShop
 public class CarShop extends Shop {
-    private int numberOfCars;
+    private int BrandOfCars;
 
-    public CarShop(String name, int numberOfCars) {
+    public CarShop(String name, int BrandOfCars) {
         super(name);
-        this.numberOfCars = numberOfCars;
+        this.BrandOfCars = BrandOfCars;
     }
 
     public int getNumberOfPets() {
-        return numberOfCars;
+        return BrandOfCars;
     }
 
     @Override
     public void displayShopInfo() {
         System.out.println("Shop Name: " + getShopName());
         System.out.println("Type: Car Shop");
-        System.out.println("Number of Cars: " + numberOfCars);
+        System.out.println("Model of Cars: " + BrandOfCars);
     }
 
     @Override
